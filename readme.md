@@ -13,6 +13,12 @@
 
 - Brew: https://brew.sh/index_pt-br
 
+- GHQ: https://github.com/x-motemen/ghq
+
+- Exa: https://the.exa.website/#installation
+
+- NerdFonts: https://github.com/ryanoasis/nerd-fonts
+
 - Github CLI: https://github.com/cli/cli
 
 - PidCat: https://github.com/JakeWharton/pidcat
