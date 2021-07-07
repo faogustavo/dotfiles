@@ -1,5 +1,6 @@
-source ~/.asdf/asdf.fish
+. ~/.asdf/asdf.fish
 . ~/.asdf/plugins/java/set-java-home.fish
+. ~/.config/fish/secrets.fish
 
 set -gx ANDROID_HOME "/Users/faogustavo/Library/Android/sdk"
 set -gx PATH $ANDROID_HOME/platform-tools $ANDROID_HOME/emulator $ANDROID_HOME/tools $ANDROID_HOME/tools/bin /Users/faogustavo/.bin $PATH

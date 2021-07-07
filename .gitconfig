@@ -12,3 +12,5 @@
 	defaultBranch = main
 [ghq]
     root=~/dev
+[pull]
+	rebase = false
