@@ -1,0 +1,11 @@
+# Default Account
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_rsa
+
+# Enterprise Account
+Host github-enterprise.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_enterprise
