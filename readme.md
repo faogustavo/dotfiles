@@ -29,6 +29,8 @@
 
 - Jetbrains Toolbox: https://www.jetbrains.com/pt-pt/lp/toolbox/
 
+- Raycast: https://www.raycast.com/
+
 - Notion: https://www.notion.so
 
 - Vysor: https://www.vysor.io/
