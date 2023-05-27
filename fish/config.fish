@@ -3,7 +3,7 @@ source ~/.asdf/plugins/java/set-java-home.fish
 source ~/.config/fish/secrets.fish
 
 set -gx ANDROID_HOME "/Users/faogustavo/Library/Android/sdk"
-set -gx PATH $ANDROID_HOME/platform-tools $ANDROID_HOME/emulator $ANDROID_HOME/tools $ANDROID_HOME/tools/bin /Users/faogustavo/.bin $PATH
+set -gx PATH $ANDROID_HOME/platform-tools $ANDROID_HOME/emulator $ANDROID_HOME/cmdline-tools/latest/bin /Users/faogustavo/.bin $PATH
 
 # git aliases
 abbr -a gd "git diff -M"
@@ -50,3 +50,7 @@ if type -q exa
   alias lla "ll -a"
   alias llt "ll --tree --level 2 -a"
 end
+
+launchctl setenv JAVA_HOME $JAVA_HOME
+launchctl setenv ANDROID_HOME $ANDROID_HOME
+launchctl setenv HOME $HOME
