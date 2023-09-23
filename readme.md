@@ -171,6 +171,7 @@ $ ln -s ~/dev/github.com/faogustavo/dotfiles/ssh/config ~/.ssh/config
 
 ### TMUX
 
+```md
 * Leader key = C-b
 * Navigate between sessions = <leader>s
 * Split window horizontal = <leader>h
@@ -183,9 +184,11 @@ $ ln -s ~/dev/github.com/faogustavo/dotfiles/ssh/config ~/.ssh/config
   * Down = <leader>e
   * Up = <leader>i
   * Right = <leader>o
+```
 
 ### NVIM
 
+```md
 * Leader key = " " # Space
 * Git = <leader>gs
 * Open tree navigation = <leader>e
@@ -194,6 +197,7 @@ $ ln -s ~/dev/github.com/faogustavo/dotfiles/ssh/config ~/.ssh/config
 * File Finder = <leader>pf
 * Fuzzy Finder = <leader>pf
 * List file updates = <leader>u
+```
 
 # Other Changes
 
