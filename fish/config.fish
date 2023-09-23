@@ -1,4 +1,4 @@
-. ~/.asdf/asdf.fish
+source ~/.asdf/asdf.fish
 source ~/.asdf/plugins/java/set-java-home.fish
 source ~/.config/fish/secrets.fish
 
@@ -44,6 +44,7 @@ alias branch_name="git branch | grep \* | cut -d ' ' -f2"
 alias ggpush="git push -u origin (branch_name)"
 alias gwip='git add --all; git commit -m "wip" --no-verify'
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
+alias vim='nvim'
 
 if type -q exa
   alias ll "exa -l -g --icons"
@@ -51,6 +52,3 @@ if type -q exa
   alias llt "ll --tree --level 2 -a"
 end
 
-launchctl setenv JAVA_HOME $JAVA_HOME
-launchctl setenv ANDROID_HOME $ANDROID_HOME
-launchctl setenv HOME $HOME
