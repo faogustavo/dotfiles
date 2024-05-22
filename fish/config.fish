@@ -3,7 +3,10 @@ source ~/.asdf/plugins/java/set-java-home.fish
 source ~/.config/fish/secrets.fish
 
 set -gx ANDROID_HOME "/Users/faogustavo/Library/Android/sdk"
-set -gx PATH $ANDROID_HOME/platform-tools $ANDROID_HOME/emulator $ANDROID_HOME/cmdline-tools/latest/bin /Users/faogustavo/.bin $PATH
+set -gx FLUTTER_HOME "/Users/faogustavo/.bin/flutter"
+set -gx WABT_HOME "/Users/faogustavo/.bin/wabt/1.0.34"
+set -gx MAESTRO_HOME "/Users/faogustavo/.maestro"
+set -gx PATH $ANDROID_HOME/platform-tools $ANDROID_HOME/emulator $ANDROID_HOME/cmdline-tools/latest/bin $FLUTTER_HOME/bin $WABT_HOME/bin $MAESTRO_HOME/bin /Users/faogustavo/.bin/prince/bin /Users/faogustavo/.bin $PATH
 
 # git aliases
 abbr -a gd "git diff -M"

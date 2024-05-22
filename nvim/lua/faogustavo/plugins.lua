@@ -17,6 +17,7 @@ local plugins = {
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
     "nvim-tree/nvim-tree.lua",
+    "ThePrimeagen/vim-be-good",
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{
