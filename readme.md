@@ -54,6 +54,7 @@
 - [Kap](https://getkap.co/)
 - [Jetbrains Toolbox](https://www.jetbrains.com/pt-pt/lp/toolbox/)
 - [Raycast](https://www.raycast.com/)
+- [Stats](https://github.com/exelban/stats)
 - [Notion](https://www.notion.so)
 - [Vysor](https://www.vysor.io/)
 - [NordVPN](https://nordvpn.com/pt-br)

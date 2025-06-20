@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source ~/.asdf/asdf.fish
 source ~/.asdf/plugins/java/set-java-home.fish
 source ~/.config/fish/secrets.fish
@@ -6,7 +8,9 @@ set -gx ANDROID_HOME "/Users/faogustavo/Library/Android/sdk"
 set -gx FLUTTER_HOME "/Users/faogustavo/.bin/flutter"
 set -gx WABT_HOME "/Users/faogustavo/.bin/wabt/1.0.34"
 set -gx MAESTRO_HOME "/Users/faogustavo/.maestro"
-set -gx PATH $ANDROID_HOME/platform-tools $ANDROID_HOME/emulator $ANDROID_HOME/cmdline-tools/latest/bin $FLUTTER_HOME/bin $WABT_HOME/bin $MAESTRO_HOME/bin /Users/faogustavo/.bin/prince/bin /Users/faogustavo/.bin $PATH
+set -gx IDEA_HOME "/Users/faogustavo/dev/github.com/faogustavo/intellij-community"
+set -gx MAVEN_REPOSITORY "/Users/faogustavo/.m2/repository"
+set -gx PATH $ANDROID_HOME/platform-tools $ANDROID_HOME/emulator $ANDROID_HOME/cmdline-tools/latest/bin $FLUTTER_HOME/bin $WABT_HOME/bin $MAESTRO_HOME/bin /Users/faogustavo/.bin/prince/bin /Users/faogustavo/.bin /opt/homebrew/opt/libressl/bin $PATH
 
 # git aliases
 abbr -a gd "git diff -M"
@@ -49,8 +53,8 @@ alias gwip='git add --all; git commit -m "wip" --no-verify'
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 alias vim='nvim'
 
-if type -q exa
-  alias ll "exa -l -g --icons"
+if type -q eza
+  alias ll "eza -l -g --icons"
   alias lla "ll -a"
   alias llt "ll --tree --level 2 -a"
 end
