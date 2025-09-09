@@ -1,7 +1,3 @@
-# ASDF
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-. ~/.asdf/plugins/java/set-java-home.zsh
-
 # Added by Toolbox App
 export PATH="$PATH:/Users/faogustavo/Library/Application Support/JetBrains/Toolbox/scripts"
 

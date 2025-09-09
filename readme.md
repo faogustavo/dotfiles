@@ -2,31 +2,31 @@
 
 ## Terminal
 
-- ~~[Fish Shell](https://fishshell.com/)~~
 - [NeoVim](https://neovim.io/)
-- ~~[tmux](https://github.com/tmux/tmux)~~
+- [tmux](https://github.com/tmux/tmux)
 - [Z](https://github.com/jethrokuan/z)
-- [ASDF](https://asdf-vm.com/#/core-manage-asdf)
 - [GHQ](https://github.com/x-motemen/ghq)
 - [EXA](https://the.exa.website/#installation)
 - [Github CLI](https://github.com/cli/cli)
 - [NerdFonts](https://github.com/ryanoasis/nerd-fonts)
-- [Warp](https://www.warp.dev/)
+- [1Passord CLI](https://developer.1password.com/docs/cli/get-started/)
+- [direnv](https://github.com/direnv/direnv/tree/master)
+- ~~[Fish Shell](https://fishshell.com/)~~
+- ~~[ASDF](https://asdf-vm.com/#/core-manage-asdf)~~
 
 ## MacOS Only
 
-- ~~[iterm2](https://iterm2.com/)~~
 - [HomeBrew](https://brew.sh/index_pt-br)
+- ~~[iterm2](https://iterm2.com/)~~
 
 ## Customizations/Configurations/Additional Tools
 
-- Themes
+- ~~Themes~~
   - [Catppuccin Latte](https://github.com/catppuccin/catppuccin)
     - [Fish](https://github.com/catppuccin/fish)
     - [tmux](https://github.com/catppuccin/tmux)
     - [nvim](https://github.com/catppuccin/nvim)
     - [iterm](https://github.com/catppuccin/iterm)
-
 
 - ~~Fish Shell~~
   - [OhMyFish](https://github.com/oh-my-fish/oh-my-fish)
@@ -39,18 +39,21 @@
   - [nvim Tree](https://github.com/nvim-tree/nvim-tree.lua) - File explorer
   - [Tree Sitter](https://github.com/nvim-treesitter/nvim-treesitter) - Syntax highlight
 
-- ~~tmux~~
+- tmux
   - [TPM](https://github.com/tmux-plugins/tpm) - Pluggin Management
   - [Continuum](https://github.com/tmux-plugins/tmux-continuum) - Store sessions
   - [Ressurect](https://github.com/tmux-plugins/tmux-resurrect) - Both to keep sessions
 
-- ASDF
+- ZShell
+  - [oh-my-zsh](https://ohmyz.sh/#install)
+  - [ZSH Auto Suggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+- ~~ASDF~~
   - [ASDF Java](https://github.com/halcyon/asdf-java)
   - [ASDF Node](https://github.com/asdf-vm/asdf-nodejs)
   - [ASDF Ruby](https://github.com/asdf-vm/asdf-ruby)
-
-- ZShell
-  - 
+  - [ASDF Gradle](https://github.com/rfrancis/asdf-gradle.git)
+  - [ASDF Maven](https://github.com/halcyon/asdf-maven)
 
 # Additional Tools
 
@@ -91,21 +94,75 @@ Steps:
 
 ### ZSH
 
-> First of all, install oh-my-zsh (https://ohmyz.sh/#install) before starting
+> First of all, install :
+> * [oh-my-zsh](https://ohmyz.sh/#install)
+> * [ZSH Auto Suggestions](https://github.com/zsh-users/zsh-autosuggestions)
+> * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
-```zsh
-$ rm -rf ~/.zprofile ~/.zshenv ~/.zshrc
+```bash
+$ rm -rf ~/.zprofile ~/.zshenv ~/.zshrc ~/.p10k.zsh
 $ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.zprofile ~/.zprofile
 $ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.zshenv ~/.zshenv
 $ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.zshrc ~/.zshrc
+$ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 ```
 
-### ASDF
+### Ghostty
 
 ```bash
-$ brew install asdf 
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/.asdfrc ~/.asdfrc
+$ rm -rf ~/Library/Application\ Support/com.mitchellh.ghostty/config
+$ ln -s ~/dev/github.com/faogustavo/dotfiles/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 ```
+
+### TMUX
+
+```bash
+$ brew install tmux
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+$ ln -s ~/dev/github.com/faogustavo/dotfiles/.tmux.conf ~/.tmux.conf
+$ tmux # On TMUX press "ctrl+b" and then "shift + i" to install dependencies
+```
+
+### Mise
+
+```bash
+# Install Mise
+$ brew install mise
+
+# Link config file
+$ ln -s ~/dev/github.com/faogustavo/dotfiles/mise.config.toml ~/.config/mise/config.toml
+
+# Install from .tool-versions
+$ mise install
+```
+
+### ~~ASDF~~
+
+```bash
+# Install ASDF
+$ brew install asdf 
+
+# Link config files
+$ ln -s ~/dev/github.com/faogustavo/dotfiles/.asdfrc ~/.asdfrc
+$ ln -s ~/dev/github.com/faogustavo/dotfiles/.tool-versions ~/.tool-versions
+
+# Add plugins
+$ asdf plugin add java https://github.com/halcyon/asdf-java.git
+$ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+$ asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+$ asdf plugin add gradle https://github.com/rfrancis/asdf-gradle.git
+$ asdf plugin add maven https://github.com/halcyon/asdf-maven
+
+# Install versions from ~/.tool-versions
+$ asdf install
+
+# Check installation
+$ asdf current
+```
+
+#### ~~Manual installation~~
+
+This is not needed anymore as the `asdf install` from previous step already install all
 
 After installed, you need install the plugins, the tools, some dependencies, and set them as the global version:
 
@@ -132,6 +189,18 @@ $ asdf set -u ruby 3.2.2
 $ which ruby # Check that it's getting version from ASDF
 $ ruby -v # Check if ruby version matches
 $ gem install bundler
+
+# Gradle
+$ asdf plugin add gradle https://github.com/rfrancis/asdf-gradle.git
+$ asdf install gradle 8.14.2
+$ asdf set -u gradle 8.14.2
+$ gradle -v
+
+# Maven
+$ asdf plugin add maven https://github.com/halcyon/asdf-maven
+$ asdf install maven 3.9.9
+$ asdf set -u maven 3.9.9
+$ mvn -v
 
 # Check everything is installed
 $ asdf current
@@ -174,15 +243,6 @@ Some utilities to use along with fish:
 ```bash
 $ fisher install jethrokuan/z # easy file navigation
 $ brew install exa # enable lla/llt
-```
-
-### ~~TMUX~~ (Deprecated?/Replaced With Warp)
-
-```bash
-$ brew install tmux
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/.tmux.conf ~/.tmux.conf
-$ tmux # On TMUX press "ctrl+b" and then "shift + i" to install dependencies
 ```
 
 # Cheat-sheet

@@ -1,0 +1,13 @@
+font-size=17
+font-family=MesloLGS NF
+font-feature=+liga
+
+window-theme=system
+macos-titlebar-style=tabs
+
+quick-terminal-position=bottom
+quick-terminal-screen=macos-menu-bar
+keybind = global:super+alt+ctrl+shift+1=toggle_quick_terminal
+
+keybind = super+k=text:\x0b
+keybind = ctrl+r=reload_config
