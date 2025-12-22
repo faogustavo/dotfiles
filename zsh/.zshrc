@@ -47,7 +47,7 @@ function mov2mp4() {
   for f in "${files[@]}"; do
     if [ -f "$f" ]; then
       echo "Processing: $f"
-      ffmpeg -i "$f" -vcodec libx265 -crf 28 "${f%.*}.mp4"
+      ffmpeg -i "$f" -vcodec libx264 -crf 28 "${f%.*}.mp4"
     else
       echo "Skipping: '$f' (File not found)"
     fi

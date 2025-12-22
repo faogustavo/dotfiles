@@ -1,0 +1,23 @@
+{
+  "name": "ai-tools",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "ai-tools": "bin/ai-tools"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "chalk": "^4.1.2",
+    "commander": "^14.0.2",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.3.3",
+    "js-yaml": "^4.1.1"
+  }
+}
