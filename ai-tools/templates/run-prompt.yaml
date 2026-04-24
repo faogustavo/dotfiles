@@ -9,6 +9,7 @@ claude_specific:
     - Read
     - Task
     - "Bash(ls:*)"
+    - "Bash(head:*)"
     - "Bash(mv:*)"
     - "Bash(git:*)"
 prompt: |

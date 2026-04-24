@@ -67,6 +67,8 @@
 - [NordVPN](https://nordvpn.com/pt-br)
 - [Grammarly](https://app.grammarly.com/)
 - [One Password](https://1password.com/)
+- [XPPen Drivers](https://www.xp-pen.com/la-pt/download/deco-640.html)
+- [DrawPen](https://github.com/DmytroVasin/DrawPen)
 
 # Installation
 
