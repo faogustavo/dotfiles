@@ -16,7 +16,8 @@ fi
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(eza git git-prompt z zsh-autosuggestions)
+plugins=(eza git git-prompt z)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Envs

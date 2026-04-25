@@ -103,17 +103,17 @@ Steps:
 
 ```bash
 $ rm -rf ~/.zprofile ~/.zshenv ~/.zshrc ~/.p10k.zsh
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.zprofile ~/.zprofile
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.zshenv ~/.zshenv
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.zshrc ~/.zshrc
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/zsh/.zprofile ~/.zprofile
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/zsh/.zshenv ~/.zshenv
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/zsh/.zshrc ~/.zshrc
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 ```
 
 ### Ghostty
 
 ```bash
 $ rm -rf ~/Library/Application\ Support/com.mitchellh.ghostty/config
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 ```
 
 ### TMUX
@@ -121,7 +121,7 @@ $ ln -s ~/dev/github.com/faogustavo/dotfiles/ghostty/config ~/Library/Applicatio
 ```bash
 $ brew install tmux
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/.tmux.conf ~/.tmux.conf
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/.tmux.conf ~/.tmux.conf
 $ tmux # On TMUX press "ctrl+b" and then "shift + i" to install dependencies
 ```
 
@@ -132,7 +132,7 @@ $ tmux # On TMUX press "ctrl+b" and then "shift + i" to install dependencies
 $ brew install mise
 
 # Link config file
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/mise.config.toml ~/.config/mise/config.toml
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/mise.config.toml ~/.config/mise/config.toml
 
 # Install from .tool-versions
 $ mise install
@@ -145,8 +145,8 @@ $ mise install
 $ brew install asdf 
 
 # Link config files
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/.asdfrc ~/.asdfrc
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/.tool-versions ~/.tool-versions
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/.asdfrc ~/.asdfrc
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/.tool-versions ~/.tool-versions
 
 # Add plugins
 $ asdf plugin add java https://github.com/halcyon/asdf-java.git
@@ -212,8 +212,9 @@ $ asdf current
 
 ```bash
 $ brew install nvim
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/.vimrc ~/.vimrc
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/nvim ~/.config/nvim
+$ brew install tree-sitter tree-sitter-cli
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/.vimrc ~/.vimrc
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/nvim ~/.config/nvim
 $ nvim # Open NVIM to install libraries
 ```
 
@@ -224,7 +225,7 @@ To manage multiple git accounts (Personal and Enterprise), we can use SSH config
 ```bash
 $ ssh-keygen -t rsa # Create poiting to ~/.ssh/id_rsa, not required if previously created
 $ ssh-keygen -t rsa # Create pointing to ~/.ssh/id_enterprise
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/ssh/config ~/.ssh/config
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/ssh/config ~/.ssh/config
 ```
 
 ### ~~Fish~~ (Deprecated?/Replaced with ZSH)
@@ -233,8 +234,8 @@ $ ln -s ~/dev/github.com/faogustavo/dotfiles/ssh/config ~/.ssh/config
 $ brew install fish
 $ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 $ touch ~/.config/fish/secrets.fish
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/fish/config.fish ~/.config/fish/config.fish # Fish can fail to load config file after this if you don't have ASDF installed. Worst case, just comment the first two lines
-$ ln -s ~/dev/github.com/faogustavo/dotfiles/fish/theme ~/.local/share/omf/themes/catppuccin-fish
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/fish/config.fish ~/.config/fish/config.fish # Fish can fail to load config file after this if you don't have ASDF installed. Worst case, just comment the first two lines
+$ ln -s ~/Developer/github.com/faogustavo/dotfiles/fish/theme ~/.local/share/omf/themes/catppuccin-fish
 $ wget https://raw.githubusercontent.com/catppuccin/fish/main/themes/Catppuccin%20Latte.theme -O ~/.config/fish/themes/Catppuccin\ Latte.theme
 $ fish_config theme save "Catppuccin Latte" # Set color scheme 
 $ omf theme catppuccin-fish # Set terminal layout

@@ -7,7 +7,7 @@ require'nvim-treesitter.configs'.setup {
         "query",
         "kotlin",
         "java",
-        "swift",
+        -- "swift",
         "javascript",
         "typescript",
         "xml",
@@ -15,7 +15,7 @@ require'nvim-treesitter.configs'.setup {
         "jsdoc",
         "json",
         "json5",
-        "jsonc",
+        -- "jsonc",
         "julia",
         "llvm"
     },
@@ -24,7 +24,7 @@ require'nvim-treesitter.configs'.setup {
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
+  auto_install = false,
 
   highlight = {
 	  enable = true,
