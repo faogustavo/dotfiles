@@ -11,3 +11,6 @@ export PATH="/Users/faogustavo/.antigravity/antigravity/bin:$PATH"
 
 # Homebrew at the end to keep it as the final source of truth
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by Antigravity CLI installer
+export PATH="/Users/faogustavo/.local/bin:$PATH"

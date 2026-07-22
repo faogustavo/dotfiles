@@ -55,3 +55,10 @@ function mov2mp4() {
   done
   echo "All tasks finished."
 }
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/faogustavo/.local/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/faogustavo/.antigravity-ide/antigravity-ide/bin:$PATH"
