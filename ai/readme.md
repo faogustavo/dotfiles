@@ -1,6 +1,6 @@
 # AI Agents Configuration & Tooling
 
-As of now, those are the AI agents that I'm using:
+At this time, I use these AI agents:
 
 - Claude Code
 - Codex
@@ -8,11 +8,11 @@ As of now, those are the AI agents that I'm using:
 - Junie (CLI and IDE)
 - Copilot (IDE Integration)
 
-To ensure that all of them gets supported, a default ~/.agents/AGENTS.md file will be created so every agent get the same base set of instructions.
+To support all of them, a default `~/.agents/AGENTS.md` file gives every agent the same base set of instructions.
 
-Then, per agent, an additional file will be created. Each agent configuration will live in their own home folder, and link the common .agents/AGENTS.md for the shared blocks.
+Each agent also has an additional file. Each agent configuration lives in its own home folder and links the common `.agents/AGENTS.md` for the shared blocks.
 
-To configure it, link the configs to the appropiate folder:
+To configure it, link the configs to the appropriate folder:
 
 ```bash
 mkdir -p ~/.agents ~/.claude-faogustavo ~/.codex ~/.junie ~/.copilot ~/.gemini
@@ -27,8 +27,9 @@ for file in ~/Developer/github.com/faogustavo/dotfiles/ai/.gemini/*; do ln -s "$
 
 ## Herdr
 
-For a better usage of agents, I'm experimenting with herdr: https://herdr.dev/
-Install following the instructions, and include all integrations that you need: https://herdr.dev/docs/integrations/
+To use agents better, I am experimenting with herdr: https://herdr.dev/
+
+Install herdr with the instructions on that site. Include all the integrations that you need: https://herdr.dev/docs/integrations/
 
 ```bash
 herdr integration install claude
@@ -37,24 +38,24 @@ herdr integration install copilot
 herdr integration install antigravity-cli
 ```
 
-> Note that Junie has not herdr integration yet.
+> Note that Junie has no herdr integration yet.
 
-The skills should also be installed for them, to ensure the optimal support. 
-Check the Skill section for more details.
+Also install the herdr skills for the agents, for the best support.
+See the Skills section for more details.
 
 ## RTK
 
-Rust Token Killer (aka RTK) is a way to improve token usage in agents.
-It filter the output of commands to keep only relevant information. 
-For installation steps, refer to https://github.com/rtk-ai/rtk.
+Rust Token Killer (RTK) decreases token usage in agents.
+It filters the output of commands and keeps only the relevant information.
+For the installation steps, refer to https://github.com/rtk-ai/rtk.
 
-There is a pre-created rtk config and it should be linked in the `~/Library/Application Support/rtk/config.toml`.
+This folder has an RTK config. Link it to `~/Library/Application Support/rtk/config.toml`:
 
 ```bash
 ln -s ~/Developer/github.com/faogustavo/dotfiles/ai/rtk/config.toml ~/Library/Application\ Support/rtk/config.toml
 ```
 
-The RTK rules are pre-built/configured in the agents file, but we also recommend running the init script to include the hook calls.
+The agents files already contain the RTK rules. I also recommend that you run the init script to include the hook calls.
 
 ```bash
 rtk init -g                     # Claude Code / Copilot (default)
@@ -64,7 +65,7 @@ rtk init -g --codex             # Codex (OpenAI)
 
 ## Skills
 
-As of now, the only skills/plugins
+At this time, these are the only skills/plugins:
 
 - android-cli skills
 - herdr skills
@@ -75,22 +76,22 @@ android skills add android-cli
 android skills add navigation-3
 ```
 
-To install herdr skills:
+To install the herdr skills:
 ```bash
 npx skills add herdrdev/herdr --skill herdr -g
 ```
 
 ## Personal vs Work accounts
 
-As of now, the only agent that I have different accounts to work and personal projects is claude.
-All others remain the same, only claude code needs an additional folder created at the user home.
+At this time, Claude Code is the only agent for which I have different accounts for work and personal projects.
+All the other agents stay the same. Only Claude Code needs an additional folder in the user home.
 
 ### Claude Code
 
-To ensure that we can have different Claude Code environment in the project, we use direnv to set the `CLAUDE_CONFIG_DIR`.
+To have different Claude Code environments per project, I use direnv to set `CLAUDE_CONFIG_DIR`.
 
-As of now, the root file is for work, as that's used the most, and the secondary folder used for personal information.
+At this time, the root folder is for work, because I use it the most. The secondary folder is for personal information.
 
-- `CLAUDE_CONFIG_DIR=~/.claude-faogustavo
+- `export CLAUDE_CONFIG_DIR=~/.claude-faogustavo`
 
-I'm using direnv to load the .env in my personal projects and swap the configuration folder when needed.
+direnv loads the .env in my personal projects and changes the configuration folder when needed.

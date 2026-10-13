@@ -36,7 +36,7 @@ When editing existing code:
 - Don't "improve" adjacent code, comments, or formatting.
 - Don't refactor things that aren't broken.
 - Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
+- If you notice unrelated dead code, mention it - don't remove it.
 
 When your changes create orphans:
 - Remove imports/variables/functions that YOUR changes made unused.
@@ -64,4 +64,4 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ## Sibling checkouts
 
-- My checkouts live under `~/Developer/github.com/<org>/<repo>`. When a task references another of my projects (e.g. the Kotlin compiler source, SKIE, etc), look for a local checkout there before fetching from the web or digging through dependency jars/caches.
+- My checkouts live under `~/Developer/github.com/<org>/<repo>`. When a task references another of my projects (e.g. the Kotlin compiler source, SKIE), look for a local checkout there first. Do this before you fetch from the web or search dependency jars/caches.
