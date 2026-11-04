@@ -69,6 +69,7 @@ At this time, these are the only skills/plugins:
 
 - android-cli skills
 - herdr skills
+- [asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)
 
 To install the Android CLI skills:
 ```bash
@@ -78,7 +79,8 @@ android skills add navigation-3
 
 To install the herdr skills:
 ```bash
-npx skills add herdrdev/herdr --skill herdr -g
+npx skills@latest add herdrdev/herdr --skill herdr -g
+npx skills@latest add danyuchn/asd-ste100-skill -g
 ```
 
 ## Personal vs Work accounts
