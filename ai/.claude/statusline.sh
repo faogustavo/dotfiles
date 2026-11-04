@@ -40,5 +40,33 @@ seg 231 "$(pct_bg "$pct")" "$(icon "📊")Context $(pad "$pct")%"
 
 [[ -n $s_pct ]] && { t="$(icon "🕐")Session $(pad "$s_pct")%"; [[ -n $s_rst ]] && t+=" ($(date -r "$s_rst" '+%H:%M' 2>/dev/null))"; seg 231 24 "$t"; }
 [[ -n $w_pct ]] && { t="$(icon "📅")Weekly $(pad "$w_pct")%"; [[ -n $w_rst ]] && t+=" ($(date -r "$w_rst" '+%a %H:%M' 2>/dev/null))"; seg 231 60 "$t"; }
+
+# Credits (extra usage) from the OAuth usage API, cached 5 min. A stale cache
+# refreshes in the background, so the statusline never blocks on curl.
+usage_cache="${TMPDIR:-/tmp}/claude-statusline-usage.json"
+refresh_usage() {
+  local tok resp
+  tok=$(security find-generic-password -s "Claude Code-credentials" -w 2>/dev/null | jq -r '.claudeAiOauth.accessToken // empty' 2>/dev/null)
+  [[ -z $tok ]] && tok=$(jq -r '.claudeAiOauth.accessToken // empty' ~/.claude/.credentials.json 2>/dev/null)
+  [[ -z $tok ]] && return
+  resp=$(curl -s --max-time 10 -H "Accept: application/json" -H "Authorization: Bearer $tok" \
+    -H "anthropic-beta: oauth-2025-04-20" https://api.anthropic.com/api/oauth/usage)
+  jq -e '.extra_usage and .error == null' <<<"$resp" >/dev/null && printf '%s' "$resp" > "$usage_cache.tmp" && mv "$usage_cache.tmp" "$usage_cache"
+}
+if (( $(date +%s) - $(stat -f %m "$usage_cache" 2>/dev/null || echo 0) >= 300 )); then
+  touch "$usage_cache"  # claim the refresh so concurrent ticks don't stampede
+  refresh_usage >/dev/null 2>&1 & disown 2>/dev/null
+fi
+
+# tab-separated: used_cents  limit_cents  pct_x10  (no line when extra usage is off)
+IFS=$'\t' read -r x_used x_limit x_pct < <(
+  jq -r '.extra_usage | select(.is_enabled == true)
+         | [ (.used_credits | round), (.monthly_limit | round),
+             (if .monthly_limit > 0 then .used_credits / .monthly_limit * 1000 | round else 0 end) ] | @tsv' \
+    "$usage_cache" 2>/dev/null)
+# money <cents> — "12,34"
+money() { printf '%d,%02d' $(( $1 / 100 )) $(( $1 % 100 )); }
+[[ -n $x_used ]] && seg 231 30 "$(icon "💲")US\$ $(money "$x_used")/$(money "$x_limit") ($(( x_pct / 10 )),$(( x_pct % 10 ))%)"
+
 printf '\e[0m'
 exit 0
